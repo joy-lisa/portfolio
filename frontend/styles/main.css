@@ -10,8 +10,8 @@
     /* gaps & sizes */
     --gap-around: 40px;
     /* fonts */
-    font-family: 'myfont', sans-serif;
-    --font-h1: normal 64px/120% 'myfont';
+    font-family: 'arial', sans-serif;
+    --font-h1: normal 64px/120% 'arial', sans-serif;
 }
 
 /* Styling of all available layout components. */
@@ -116,6 +116,16 @@
         width: 100%;
         max-width: 800px;
         text-align: center;
+    }
+
+    &>.hero {
+        &>.container {
+            &>.preline {
+                :not(:last-child)::after {
+                    content: ',';
+                }
+            }
+        }
     }
 }
 

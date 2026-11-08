@@ -20,6 +20,14 @@ function get_project_by_id(int $id): array
         }
     }
 
+// load project_category
+
+$project_categories = array_map(function ($item) {
+    return $item->name;
+}, get_the_terms($id, 'project_category'));
+
+js_log($project_categories);
+
 // return data
     return [
         'title' => $title,
@@ -28,6 +36,7 @@ function get_project_by_id(int $id): array
         'description' => $description,
         'text' => $text,
         'gallery' => $gallery,
+        'project_categories' => $project_categories,
     ];
     //js_log('soll infos zu einem projekt geben mit ID' . $id);
 }
