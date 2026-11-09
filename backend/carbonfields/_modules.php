@@ -12,6 +12,15 @@ Container::make('post_meta', 'Module')
                 Field::make('text', 'title', 'Titel')->set_required(),
                 Field::make('image', 'image', 'Bild')->set_required(),
             ])
+
+            // hero_front
+
+              ->add_fields('hero_front', 'hero startseite', [
+               Field::make('text', 'title', 'titel')->set_required(),
+               Field::make ('textarea', 'subline', 'subline')->set_required(),
+               Field::make ('image', 'image', 'bild'),
+            ])
+
             // todo: add new modules here
             // -> SETTINGS
             ->set_layout('tabbed-vertical')
@@ -27,7 +36,10 @@ function render_modules (): void {
         // -> Modifiziere die Daten des Moduls, falls nötig, basierend auf dem Modultyp
         switch ($module['_type']) {
             case 'example':
-                $module['image'] = get_media_by_id($module['image'], 'full');
+                $module['image'] = get_media_by_id($module['image']);
+                break;
+            case 'hero_front':
+                $module['image'] = get_media_by_id($module['image']);
                 break;
                 // todo: add data modifications for modules here as a new case
         }
