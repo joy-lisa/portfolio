@@ -14,6 +14,8 @@ function get_project_by_id(int $id): array
     $gallery_ids = carbon_get_post_meta($id, 'gallery');
     $gallery = [];
 
+    $link = get_permalink($id);
+
     if (!empty($gallery_ids)) {
         foreach ($gallery_ids as $gallery_id) {
             $gallery[] = get_media_by_id($gallery_id);
@@ -37,6 +39,7 @@ js_log($project_categories);
         'text' => $text,
         'gallery' => $gallery,
         'project_categories' => $project_categories,
+        'link' => $link,
     ];
     //js_log('soll infos zu einem projekt geben mit ID' . $id);
 }
