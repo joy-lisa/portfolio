@@ -8,10 +8,10 @@
 
 ### SEO
 - [x] 🟠 Ich habe [Yoast SEO](#yoast-seo) installiert, aktiviert und konfiguriert.
-- [ ] 🔴 Ich erlaube in den Einstellungen das Crawlen der Webseite (Einstellungen > Lesen).
-- [ ] 🔴 Ich habe eine korrekte robots.txt Datei. 
-- [ ] 🟠 Ich habe eine korrekte sitemap.xml Datei.
-- [ ] 🟢 Ich habe eine korrekte llms.txt Datei.
+- [x] 🔴 Ich erlaube in den Einstellungen das Crawlen der Webseite (Einstellungen > Lesen).
+- [x] 🔴 Ich habe eine korrekte robots.txt Datei. 
+- [x] 🟠 Ich habe eine korrekte sitemap.xml Datei.
+- [x] 🟢 Ich habe eine korrekte llms.txt Datei.
 
 ### Security
 - [x] 🔴 Die Webseite hat HTTPS aktiviert.
@@ -27,7 +27,7 @@
 ### Rechtliches
 - [ ] 🔴 Die Webseite hat ein korrektes Impressum. [Mehr zur Impressumspflicht](https://www.hostpoint.ch/blog/impressumspflicht-f%C3%BCr-websites/)
 - [ ] 🔴 Die Webseite hat eine korrekte Datenschutzpage, welche in den Einstellungen verlinkt ist. [Mehr zur Datenschutzerklärung](https://www.edoeb.admin.ch/de/datenschutzerklaerungen-im-internet)
-- [ ] 🔴 Die Webseite hat, falls nötig, einen Cookie-Banner installiert. [Mehr zu Cookie-Bannern](https://www.hostpoint.ch/blog/das-neue-dsg-und-der-cookie-banner-wirrwarr-was-gilt-denn-nun-eigentlich/)
+- [x] 🔴 Die Webseite hat, falls nötig, einen Cookie-Banner installiert. [Mehr zu Cookie-Bannern](https://www.hostpoint.ch/blog/das-neue-dsg-und-der-cookie-banner-wirrwarr-was-gilt-denn-nun-eigentlich/)
 
 ### Allgemeines
 - [x] 🟢 Das Projekt liegt auf GitHub.
@@ -90,13 +90,13 @@
 > [Updraft-Plus](https://wordpress.org/plugins/updraftplus/)
 
 - [x] Installieren (Suchbegriff: UpdraftPlus)
-- [ ] Settings > Definieren, wie oft gebackupt werden soll
-- [ ] FTP als `Storage Location` auswählen
-- [ ] Folder für die Backups mit FileZilla erstellen
-- [ ] Angaben zum FTP-Account machen
-- [ ] Alle Einstellungen so lassen
-- [ ] Backup Now durchführen
-- [ ] Mit FileZilla den Server prüfen
+- [x] Settings > Definieren, wie oft gebackupt werden soll
+- [x] FTP als `Storage Location` auswählen
+- [x] Folder für die Backups mit FileZilla erstellen
+- [x] Angaben zum FTP-Account machen
+- [x] Alle Einstellungen so lassen
+- [x] Backup Now durchführen
+- [x] Mit FileZilla den Server prüfen
 
 ### Uptime Robot
 > [Uptime Robot](https://uptimerobot.com/)

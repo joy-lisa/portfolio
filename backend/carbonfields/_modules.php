@@ -21,10 +21,27 @@ Container::make('post_meta', 'Module')
                Field::make ('image', 'image', 'bild'),
             ])
 
+            // hero standard
+
+            -> add_fields('hero_default', 'hero standard', [
+                Field::make('text', 'title', 'titel')->set_required(),
+                Field::make ('textarea', 'subline', 'subline')->set_required(),
+            ])
+
+            // teaser page
+
+            ->add_fields('teaser_page', 'teaser page', [
+                Field::make('text', 'title', 'titel')->set_required(),
+                Field::make ('textarea', 'subline', 'subline')->set_required(),
+                Field::make ('image', 'image', 'bild'),
+                Field::make ('text', 'link_to_page', 'link zur seite')->set_required(),
+            ])
+
             // overview_projects
 
               ->add_fields('overview_projects', 'übersicht projekte', [
                Field::make('text', 'title', 'titel')->set_required(),
+               Field::make ('text', 'all_projects_link', 'link zu allen projekten')->set_required(),
                Field::make ('association', 'selection', 'auswahl projekte')
                ->set_types([
                [
@@ -33,7 +50,14 @@ Container::make('post_meta', 'Module')
                ]
             ])
 
-              ])
+            ])
+
+            // alle projekte
+
+            ->add_fields('all_projects', 'alle projekte', [
+             Field::make('text', 'title', 'titel'),
+             Field::make('text', 'filter_label', 'label für "alle"'),
+            ])
 
             // todo: add new modules here
             // -> SETTINGS
@@ -56,11 +80,29 @@ function render_modules (): void {
                 $module['image'] = get_media_by_id($module['image']);
                 break;
 
+            case 'hero_default':
+                break;
+
+            case 'teaser_page':
+                $module['image'] = get_media_by_id($module['image']);
+                break;
+
             case 'overview_projects':
                 $module['selection'] = array_map(function ($item) {
                     return (int) $item['id'];
                 }, $module['selection']);
                 break;
+
+            case 'all_projects':
+                $module['projects'] = get_posts([
+                 'post_type'      => 'project',
+                 'posts_per_page' => -1,
+                 'orderby'        => 'date',
+                 'order'          => 'DESC',
+                    ]);
+                break;
+
+
                 // todo: add data modifications for modules here as a new case
         }
         // -> Laden des Templates basierend auf dem Modultyp und weitergeben der Daten

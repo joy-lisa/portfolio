@@ -5,6 +5,7 @@ js_log($data);
 
 <section data-module="overview_projects">
   <h2 class="title"><?= $data['title'] ?></h2>
+  <a href="<?= $data['all_projects_link'] ?>" class="all-projects-link">Alle Projekte</a>
   <div class="projects">
     <?php foreach ($data['selection'] as $project_id) : ?>
         <?php
